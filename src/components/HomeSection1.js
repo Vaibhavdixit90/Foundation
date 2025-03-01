@@ -14,8 +14,8 @@ const HomeSection1 = () => {
   };
 
   return (
-    <section className="bg-white text-black py-16 px-8">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
+    <>
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 py-16 px-8 md:px-0">
         {/* Left Content */}
         <div className="md:w-1/2 space-y-6">
           <h4 className="text-gray-600 uppercase tracking-wide">
@@ -59,9 +59,7 @@ const HomeSection1 = () => {
           </div>
         </div>
       </div>
-
-      {/* Supporters Section */}
-      <div className="mt-16 text-center">
+      <div className="my-16 text-center">
         <h4 className="uppercase tracking-wide mb-6 text-2xl font-bold">
           Our Supporters
         </h4>
@@ -74,7 +72,7 @@ const HomeSection1 = () => {
           ))}
         </div>
       </div>
-    </section>
+    </>
   );
 };
 

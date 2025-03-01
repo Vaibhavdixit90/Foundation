@@ -1,48 +1,73 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const AboutusSection1 = () => {
   return (
-    <section className="bg-white py-16">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center gap-12">
-        {/* Image Section */}
-        <div className="relative w-full md:w-1/2">
-          <div className="rounded-lg overflow-hidden shadow-lg">
-            <Image
-              src="https://images.unsplash.com/photo-1551434678-e076c223a692"
-              alt="Dev Mukharji"
-              width={600}
-              height={450}
-              className="w-full h-auto object-cover"
-            />
-          </div>
-        </div>
-        {/* Text Content */}
-        <div className="w-full md:w-1/2 text-black">
-          <h2 className="text-4xl font-bold leading-tight mb-6">
-            Every Child Deserves a Chance
-          </h2>
-
-          {/* Two-Column Text Layout */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-lg text-gray-600">
-            <p>
-              We are dedicated to creating a world where every child has access
-              to education, healthcare, and a bright future. We are dedicated to
-              creating a world where every child has access to education,
-              healthcare, and a bright future.
-            </p>
-            <p>
-              Join us in making a difference by supporting our mission to bring
-              hope and opportunities to underprivileged children.
+    <div className="px-4 mx-auto lg:px-0 max-w-7xl">
+      <div className="overflow-hidden bg-gray-100 rounded-3xl">
+        <div className="grid grid-cols-2 lg:grid-cols-4">
+          <div className="col-span-2 px-8 py-12 text-center xl:px-12 lg:text-left lg:order-1">
+            <h2 className="text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">
+              Meet the brain
+            </h2>
+            <p className="mt-4 text-base font-normal leading-7 text-gray-600 lg:text-lg lg:mt-6 lg:leading-8">
+              We are a passionate team dedicated to driving positive change in
+              India. As an NGO, we strive to empower communities through
+              education, innovation, and sustainable development. With a shared
+              vision and relentless commitment, we work towards building a
+              brighter, more inclusive future for all.
             </p>
           </div>
 
-          {/* Name and Position instead of Signature */}
-          <div className="mt-6 italic text-lg text-gray-800">
-            Vaibhav Dixit, CTO
+          <div className="relative overflow-hidden lg:order-1 group">
+            <Link
+              href="https://www.linkedin.com/in/mrdevmukherjee/"
+              target="_blank"
+            >
+              <img
+                className="object-cover w-full h-full transition-all duration-200 group-hover:scale-110"
+                src="/Dev.jpeg"
+                alt=""
+              />
+              <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-80"></div>
+              <div className="absolute bottom-0 left-0 w-full p-3 sm:py-5 sm:px-6">
+                <div className="scale-90 sm:scale-100">
+                  <p className="text-base font-semibold text-white">
+                    Dev Mukherjee
+                  </p>
+                  <p className="mt-1 text-sm font-normal text-gray-300">
+                    Founder
+                  </p>
+                </div>
+              </div>
+            </Link>
+          </div>
+          <div className="relative overflow-hidden lg:order-2 group">
+            <Link
+              href="https://www.linkedin.com/in/vaibhav-dixit913/"
+              target="_blank"
+            >
+              <img
+                className="object-cover w-full h-full transition-all duration-200 group-hover:scale-110"
+                src="/VaibhavMain.jpeg"
+                alt=""
+              />
+              <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-80"></div>
+              <div className="absolute bottom-0 left-0 w-full p-3 sm:py-5 sm:px-6">
+                <div className="scale-90 sm:scale-100">
+                  <p className="text-base font-semibold text-white">
+                    Vaibhav Dixit
+                  </p>
+                  <p className="mt-1 text-sm font-normal text-gray-300">
+                    Co-founder
+                  </p>
+                </div>
+              </div>
+            </Link>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

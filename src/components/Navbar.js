@@ -95,11 +95,11 @@ const Navbar = () => {
               Programs
             </Link>
             <Link
-              href="/resources"
+              href="/gallery"
               className="hover:text-gray-400"
               onClick={() => setMenuOpen(false)}
             >
-              Resources
+              Gallery
             </Link>
             <Link
               href="/about-us"

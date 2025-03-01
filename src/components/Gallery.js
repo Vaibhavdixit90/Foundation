@@ -21,8 +21,8 @@ const Gallery = () => {
       : images.filter((image) => image.category === selectedCategory);
 
   return (
-    <div className="max-w-7xl mx-auto flex flex-col gap-6 mt-10 px-4">
-      <div className="flex flex-col md:flex-row justify-between items-center px-4 gap-4">
+    <div className="max-w-7xl mx-auto flex flex-col gap-6 mt-10 px-4 md:px-0">
+      <div className="flex flex-col md:flex-row justify-between items-center px-4 md:px-0 gap-4">
         <h1 className="text-3xl font-bold">Our Impact Gallery</h1>
 
         <p className="text-center md:hidden px-4 max-w-3xl">
@@ -45,7 +45,7 @@ const Gallery = () => {
           ))}
         </div>
       </div>
-      <p className="hidden md:block text-center md:text-left px-4 max-w-3xl">
+      <p className="hidden md:block text-left max-w-3xl">
         Explore our gallery showcasing the impact of our projects, events, and
         stories. Discover how we have made a difference in the lives of
         individuals and communities. Join us in our mission to make a positive

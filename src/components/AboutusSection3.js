@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const AboutusSection3 = () => {
+const AboutusSection2 = () => {
   return (
     <section className=" py-16 px-6 lg:px-12">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
@@ -79,4 +79,4 @@ const AboutusSection3 = () => {
   );
 };
 
-export default AboutusSection3;
+export default AboutusSection2;

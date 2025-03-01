@@ -3,7 +3,7 @@ import React from "react";
 
 const HomeSection4 = () => {
   return (
-    <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl py-12 sm:py-16 lg:py-20 xl:py-24">
+    <div className="px-4 mx-auto sm:px-0 max-w-7xl py-12 sm:py-16 lg:py-20 xl:py-24">
       <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-16 xl:gap-x-24 gap-y-12">
         <div className="">
           <img

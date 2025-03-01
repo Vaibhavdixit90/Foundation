@@ -32,11 +32,11 @@ const Footer = () => {
             <h3 className="text-lg font-bold">About Us</h3>
             <ul className="text-gray-400 text-sm mt-2 space-y-1">
               {[
-                { name: "About Us", href: "/about" },
+                { name: "About Us", href: "/about-us" },
                 { name: "Programs", href: "/programs" },
-                { name: "Volunteers", href: "/volunteers" },
-                { name: "Partners", href: "/partners" },
-                { name: "Contact Us", href: "/contact" },
+                { name: "Gallery", href: "/gallery" },
+                { name: "Blogs", href: "/blogs" },
+                { name: "Contact Us", href: "/contact-us" },
               ].map((item) => (
                 <li key={item.name} className="text-left">
                   <Link href={item.href} className="hover:text-gray-400">
