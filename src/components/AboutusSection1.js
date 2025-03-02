@@ -49,7 +49,7 @@ const AboutusSection1 = () => {
             >
               <img
                 className="object-cover w-full h-full transition-all duration-200 group-hover:scale-110"
-                src="/VaibhavMain.jpeg"
+                src="/Vaibhav.jpeg"
                 alt=""
               />
               <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-80"></div>

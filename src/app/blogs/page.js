@@ -1,16 +1,14 @@
+import React from "react";
 import BlogHero from "@/components/BlogHero";
 import BlogListing from "@/components/BlogListing";
-import VolunteerPopup from "@/components/VolunteerPopup";
-import React from "react";
 
-const page = () => {
+const Page = () => {
   return (
     <>
-      <VolunteerPopup />
       <BlogHero />
       <BlogListing />
     </>
   );
 };
 
-export default page;
+export default Page;

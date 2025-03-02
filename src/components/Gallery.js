@@ -1,30 +1,63 @@
 "use client";
-import React, { useState } from "react";
-
-const imageSrc =
-  "https://images.pexels.com/photos/12451890/pexels-photo-12451890.jpeg";
+import React, { useState, useEffect } from "react";
 
 const Gallery = () => {
-  const categories = ["all", "events", "projects", "stories"];
+  const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("all");
-  const images = [
-    { category: "events" },
-    { category: "projects" },
-    { category: "stories" },
-    { category: "events" },
-    { category: "projects" },
-    { category: "stories" },
-  ];
+  const [images, setImages] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchGalleryData = async () => {
+      try {
+        const response = await fetch(
+          "https://ehubzone.com/wp-json/wp/v2/gallery_post?_fields=acf"
+        );
+        const data = await response.json();
+
+        const fetchedImages = await Promise.all(
+          data.flatMap(async (item) => {
+            if (!item.acf.gallery || item.acf.gallery.length === 0) return [];
+
+            return Promise.all(
+              item.acf.gallery.map(async (mediaId) => {
+                const mediaResponse = await fetch(
+                  `https://ehubzone.com/wp-json/wp/v2/media/${mediaId}`
+                );
+                const mediaData = await mediaResponse.json();
+
+                return {
+                  title: item.acf.title || "Unknown",
+                  imageUrl: mediaData.source_url || "", // Handle missing URL
+                };
+              })
+            );
+          })
+        );
+
+        const validImages = fetchedImages.flat().filter((img) => img.imageUrl);
+
+        setImages(validImages);
+        setCategories(["all", ...new Set(validImages.map((img) => img.title))]);
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching gallery data:", error);
+        setLoading(false);
+      }
+    };
+
+    fetchGalleryData();
+  }, []);
+
   const filteredImages =
     selectedCategory === "all"
       ? images
-      : images.filter((image) => image.category === selectedCategory);
+      : images.filter((image) => image.title === selectedCategory);
 
   return (
     <div className="max-w-7xl mx-auto flex flex-col gap-6 mt-10 px-4 md:px-0">
       <div className="flex flex-col md:flex-row justify-between items-center px-4 md:px-0 gap-4">
         <h1 className="text-3xl font-bold">Our Impact Gallery</h1>
-
         <p className="text-center md:hidden px-4 max-w-3xl">
           Explore our gallery showcasing the impact of our projects, events, and
           stories. Discover how we have made a difference in the lives of
@@ -51,16 +84,22 @@ const Gallery = () => {
         individuals and communities. Join us in our mission to make a positive
         impact in the world.
       </p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 my-6">
-        {filteredImages.map((image, key) => (
-          <img
-            src={imageSrc}
-            alt="gallery"
-            className="w-full h-[250px] object-cover rounded"
-            key={key}
-          />
-        ))}
-      </div>
+      {loading ? (
+        <p className="text-center text-xl">Loading...</p>
+      ) : filteredImages.length === 0 ? (
+        <p className="text-center text-xl">No images available.</p>
+      ) : (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 my-6">
+          {filteredImages.map((image, key) => (
+            <img
+              src={image.imageUrl}
+              alt={image.title}
+              className="w-full h-[250px] object-cover rounded"
+              key={key}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 };

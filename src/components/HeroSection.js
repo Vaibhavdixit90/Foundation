@@ -2,7 +2,10 @@ const HeroSection = () => {
   return (
     <section
       className="relative bg-cover bg-center h-screen flex items-center text-white"
-      style={{ backgroundImage: "url('/hero.jpg')" }}
+      style={{
+        backgroundImage:
+          "url('https://cdn.pixabay.com/photo/2022/07/05/12/11/poor-7302954_960_720.jpg')",
+      }}
     >
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/30 to-transparent"></div>
@@ -38,7 +41,7 @@ const HeroSection = () => {
           </div>
 
           {/* Sponsors */}
-          <div className="flex flex-wrap md:flex-nowrap gap-6 mt-10">
+          {/* <div className="flex flex-wrap md:flex-nowrap gap-6 mt-10">
             <span className="bg-gray-700 px-6 py-3 rounded-md text-center">
               🌟 Logo 1
             </span>
@@ -48,7 +51,7 @@ const HeroSection = () => {
             <span className="bg-gray-700 px-6 py-3 rounded-md text-center">
               🌟 Logo 3
             </span>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

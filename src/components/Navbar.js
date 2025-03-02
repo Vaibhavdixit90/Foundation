@@ -31,7 +31,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link href="/">
           <div className="text-lg font-bold flex items-center space-x-2 cursor-pointer">
-            <span>🚀 EMPOWERNEXT</span>
+            <span>EMPOWERNEXT</span>
           </div>
         </Link>
 
@@ -66,7 +66,7 @@ const Navbar = () => {
 
         {/* Donate Button */}
         <Link href="/donate" className="hidden md:block">
-          <button className="px-10 py-1 h-10 w-[147px] bg-[#FD7E14] text-white text-sm font-semibold rounded-[16px] hover:bg-orange-600 transition duration-300">
+          <button className="px-10 py-1 h-10 w-[147px] bg-[#FC8D19] text-white text-sm font-semibold rounded-[16px] hover:bg-orange-600 transition duration-300">
             DONATE
           </button>
         </Link>
