@@ -1,22 +1,28 @@
+"use client";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const HomeSection3 = () => {
+  const router = useRouter();
   const projects = [
     {
       title: "Renewable Tech Bootcamp",
       description: "Learn about renewable energy technologies and innovations.",
       image: "https://images.unsplash.com/photo-1709290749293-c6152a187b14",
+      slug: "renewable-tech-bootcamp",
     },
     {
       title: "Women in Data Science",
       description: "Empowering women to lead in data science fields worldwide.",
       image: "https://images.unsplash.com/photo-1709290749293-c6152a187b14",
+      slug: "women-in-data-science",
     },
     {
       title: "Scholarship Program: Rural Areas",
       description:
         "Providing scholarships to students in underprivileged areas.",
       image: "https://images.unsplash.com/photo-1709290749293-c6152a187b14",
+      slug: "scholarship-program-rural-areas",
     },
   ];
 
@@ -48,7 +54,10 @@ const HomeSection3 = () => {
                 {project.title}
               </h3>
               <p className="text-white text-sm mt-2">{project.description}</p>
-              <button className="mt-4 px-5 py-2 bg-white text-black font-semibold rounded-md self-start">
+              <button
+                className="mt-4 px-5 py-2 bg-white text-black font-semibold rounded-md self-start"
+                onClick={() => router.push(`/programs/${projects.slug}`)}
+              >
                 Learn More
               </button>
             </div>

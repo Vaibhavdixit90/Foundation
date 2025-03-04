@@ -15,30 +15,34 @@ const Gallery = () => {
         );
         const data = await response.json();
 
-        const fetchedImages = await Promise.all(
-          data.flatMap(async (item) => {
-            if (!item.acf.gallery || item.acf.gallery.length === 0) return [];
+        let fetchedImages = [];
 
-            return Promise.all(
-              item.acf.gallery.map(async (mediaId) => {
-                const mediaResponse = await fetch(
-                  `https://ehubzone.com/wp-json/wp/v2/media/${mediaId}`
-                );
-                const mediaData = await mediaResponse.json();
+        for (const item of data) {
+          if (!item.acf.gallery || item.acf.gallery.length === 0) continue;
 
-                return {
-                  title: item.acf.title || "Unknown",
-                  imageUrl: mediaData.source_url || "", // Handle missing URL
-                };
-              })
+          for (const mediaId of item.acf.gallery) {
+            const mediaResponse = await fetch(
+              `https://ehubzone.com/wp-json/wp/v2/media/${mediaId}`
             );
-          })
-        );
+            const mediaData = await mediaResponse.json();
 
-        const validImages = fetchedImages.flat().filter((img) => img.imageUrl);
+            if (mediaData.source_url) {
+              fetchedImages.push({
+                title: item.acf.title || "Unknown",
+                imageUrl: mediaData.source_url,
+              });
+            }
+          }
+        }
 
-        setImages(validImages);
-        setCategories(["all", ...new Set(validImages.map((img) => img.title))]);
+        // Ensure all categories are included
+        const uniqueCategories = [
+          "all",
+          ...new Set(fetchedImages.map((img) => img.title)),
+        ];
+
+        setImages(fetchedImages);
+        setCategories(uniqueCategories);
         setLoading(false);
       } catch (error) {
         console.error("Error fetching gallery data:", error);

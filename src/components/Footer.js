@@ -70,13 +70,13 @@ const Footer = () => {
 
         {/* Social Icons */}
         <div className="flex justify-center space-x-5 mt-10">
-          <Link href="/">
+          <Link href="https://supramentalawakening.com/" target="_blank">
             <FaFacebookF className="text-white bg-gray-800 p-2 rounded-full text-3xl cursor-pointer hover:bg-gray-700" />
           </Link>
-          <Link href="/">
+          <Link href="https://supramentalawakening.com/" target="_blank">
             <FaXTwitter className="text-white bg-gray-800 p-2 rounded-full text-3xl cursor-pointer hover:bg-gray-700" />
           </Link>
-          <Link href="/">
+          <Link href="https://supramentalawakening.com/" target="_blank">
             <FaInstagram className="text-white bg-gray-800 p-2 rounded-full text-3xl cursor-pointer hover:bg-gray-700" />
           </Link>
         </div>

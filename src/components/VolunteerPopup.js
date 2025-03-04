@@ -68,7 +68,7 @@ const VolunteerPopup = ({ isOpen = false, setIsOpen = () => {} }) => {
         throw new Error(errorData.message || "Failed to submit form");
       }
 
-      toast.success("Form submitted successfully!");
+      toast.success("Wo got your data! We will contact you soon.");
       setFormData({
         firstName: "",
         lastName: "",

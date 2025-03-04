@@ -2,7 +2,7 @@ import { FaFacebookF, FaXTwitter, FaInstagram } from "react-icons/fa6";
 
 const ContactUsHero = () => {
   return (
-    <section className="bg-[#FCEEC3] py-16 px-6 md:px-20 lg:px-32 mt-16">
+    <section className="bg-[#FCEEC3] py-16 px-6 md:px-20 lg:px-32 mt-14 md:mt-16">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
         {/* Left Section */}
         <div className="md:w-1/2 text-center md:text-left">

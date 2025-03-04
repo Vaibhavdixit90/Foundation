@@ -9,7 +9,7 @@ const Donationform = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto flex justify-center items-center">
+    <div className="max-w-7xl mx-auto flex justify-center items-center px-2 md:px-0">
       <div className="w-full  shadow-md overflow-hidden rounded-md grid lg:grid-cols-2">
         <div
           style={{

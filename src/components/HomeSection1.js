@@ -1,18 +1,5 @@
-"use client";
-import { useState } from "react";
-import { FaPlay } from "react-icons/fa";
 
 const HomeSection1 = () => {
-  const [isPlaying, setIsPlaying] = useState(false);
-
-  const handlePlay = () => {
-    const video = document.getElementById("about-video");
-    if (video) {
-      video.play();
-      setIsPlaying(true);
-    }
-  };
-
   return (
     <>
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 py-16 px-8 md:px-0">
@@ -47,15 +34,10 @@ const HomeSection1 = () => {
               src="https://www.w3schools.com/html/mov_bbb.mp4"
               className="w-full h-full object-cover"
               controls
+              autoPlay
+              muted
+              loop
             />
-            {!isPlaying && (
-              <button
-                onClick={handlePlay}
-                className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 text-white text-4xl rounded-full w-16 h-16 m-auto"
-              >
-                <FaPlay size={20} />
-              </button>
-            )}
           </div>
         </div>
       </div>

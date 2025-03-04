@@ -25,33 +25,20 @@ const HeroSection = () => {
           {/* Donation Stats */}
           <div className="mt-6 flex flex-col sm:flex-row sm:items-center gap-6 text-xl font-semibold">
             <div className="flex items-center gap-3">
-              <span className="text-orange-500 text-3xl md:text-4xl font-bold">
-                $1 284 528
+              <span className="text-orange-500 text-2xl md:text-4xl font-bold">
+                $128
               </span>
-              <span className="text-white text-lg">Donation</span>
+              <span className="text-base md:text-lg">Donation</span>
             </div>
             <div className="flex items-center gap-3">
-              <span className="text-orange-500 text-3xl md:text-4xl font-bold">
-                12 460
+              <span className="text-orange-500 text-2xl md:text-4xl font-bold">
+                12,460
               </span>
-              <span className="text-white text-lg">
+              <span className="text-base md:text-lg">
                 Women Placed In STEM Careers
               </span>
             </div>
           </div>
-
-          {/* Sponsors */}
-          {/* <div className="flex flex-wrap md:flex-nowrap gap-6 mt-10">
-            <span className="bg-gray-700 px-6 py-3 rounded-md text-center">
-              🌟 Logo 1
-            </span>
-            <span className="bg-gray-700 px-6 py-3 rounded-md text-center">
-              🌟 Logo 2
-            </span>
-            <span className="bg-gray-700 px-6 py-3 rounded-md text-center">
-              🌟 Logo 3
-            </span>
-          </div> */}
         </div>
       </div>
     </section>

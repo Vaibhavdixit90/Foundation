@@ -1,18 +1,4 @@
-"use client";
-import { FaPlay } from "react-icons/fa";
-import { useState } from "react";
-
 const AboutusHero = () => {
-  const [isPlaying, setIsPlaying] = useState(false);
-
-  const handlePlay = () => {
-    const video = document.getElementById("about-video");
-    if (video) {
-      video.play();
-      setIsPlaying(true);
-    }
-  };
-
   return (
     <section className="py-12 mt-20 relative">
       <div className="max-w-6xl mx-auto px-6 lg:px-12">
@@ -38,24 +24,16 @@ const AboutusHero = () => {
         </div>
       </div>
 
-      {/* Video Section with Play Button */}
-      <div className="relative max-w-6xl mx-auto mt-6 z-10">
-        <div className="w-full rounded-lg overflow-hidden shadow-lg h-96 relative">
-          <video
-            id="about-video"
-            src="https://www.w3schools.com/html/mov_bbb.mp4"
-            className="w-full h-full object-cover"
-            controls
-          />
-          {!isPlaying && (
-            <button
-              onClick={handlePlay}
-              className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 text-white text-4xl rounded-full w-16 h-16 m-auto"
-            >
-              <FaPlay size={20} />
-            </button>
-          )}
-        </div>
+      <div className="w-full relative max-w-7xl mx-auto mt-6 z-10 rounded-lg overflow-hidden shadow-lg h-96 ">
+        <video
+          id="about-video"
+          src="https://www.w3schools.com/html/mov_bbb.mp4"
+          className="w-full h-full object-cover"
+          controls
+          loop
+          autoPlay
+          muted
+        />
       </div>
 
       {/* Mission and Vision Section */}

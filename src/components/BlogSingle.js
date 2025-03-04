@@ -104,17 +104,17 @@ const BlogSingle = () => {
         <div className="lg:col-span-2 lg:self-start lg:sticky lg:top-60 lg:order-last lg:flex lg:justify-end">
           <ul className="flex space-x-3 lg:space-x-0 lg:space-y-4 lg:flex-col lg:items-center">
             <li>
-              <Link href="/">
+              <Link href="https://supramentalawakening.com/" target="_blank">
                 <FaFacebookF className="text-white bg-gray-800 p-2 rounded-full text-3xl cursor-pointer hover:bg-gray-700" />
               </Link>
             </li>
             <li>
-              <Link href="/">
+              <Link href="https://supramentalawakening.com/" target="_blank">
                 <FaInstagram className="text-white bg-gray-800 p-2 rounded-full text-3xl cursor-pointer hover:bg-gray-700" />
               </Link>
             </li>
             <li>
-              <Link href="/">
+              <Link href="https://supramentalawakening.com/" target="_blank">
                 <FaXTwitter className="text-white bg-gray-800 p-2 rounded-full text-3xl cursor-pointer hover:bg-gray-700" />
               </Link>
             </li>
