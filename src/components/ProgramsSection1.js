@@ -90,7 +90,10 @@ export default function ProgramsSection1() {
                 >
                   Learn More
                 </button>
-                <button className="bg-orange-500 text-white px-4 py-2 rounded-md hover:bg-orange-600 transition duration-300">
+                <button
+                  className="bg-orange-500 text-white px-4 py-2 rounded-md hover:bg-orange-600 transition duration-300"
+                  onClick={() => router.push("/donate")}
+                >
                   Donate Now
                 </button>
               </div>

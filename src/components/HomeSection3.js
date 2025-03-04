@@ -56,7 +56,7 @@ const HomeSection3 = () => {
               <p className="text-white text-sm mt-2">{project.description}</p>
               <button
                 className="mt-4 px-5 py-2 bg-white text-black font-semibold rounded-md self-start"
-                onClick={() => router.push(`/programs/${projects.slug}`)}
+                onClick={() => router.push(`/programs/${project.slug}`)}
               >
                 Learn More
               </button>
